@@ -2,9 +2,9 @@
 
 Version: 0.10
 
-Works in a simliar fashion to the Edge Bar
+WIP, Works in a simliar fashion to the Edge Bar
 
-SideBar is able to autohide itself.<br />
+WIP SideBar is able to autohide itself.<br />
 Made in C# Empty Project(.NET Framework) Template [Visual Studio 2022]].
 
 Changelog:
