@@ -71,7 +71,7 @@ namespace SideBar
             settingsBackgroundColorChangerBlueLabel.Visible = true;
             settingsBackgroundColorChangerBlueLabel.Text = "Blue";
         }
-        private void SettingOptionsClose(object sender, EventArgs e)//When Setting options close
+        private void SettingOptionsClose(object sender, EventArgs e)//When setting options close
         {
             //red
             settingsBackgroundColorChangerRed.Location = new Point(0, 0);
