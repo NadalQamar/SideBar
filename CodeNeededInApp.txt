@@ -1,0 +1,40 @@
+SideBar
+            this.Location = Location = new System.Drawing.Point(Screen.PrimaryScreen.Bounds.Width - 1, 0);
+SideBarPrimaryButtonPanel
+            this.SideBarPrimaryButtonPanel.Location = new System.Drawing.Point(0, Screen.PrimaryScreen.Bounds.Height-110);
+
+            //
+            //settingsBackgroundColorChanger
+            //
+            this.settingsBackgroundColorChanger.Name = "settingsBackgroundColorChanger";
+            this.settingsBackgroundColorChanger.Location = new Point(0, 0);
+            this.settingsBackgroundColorChanger.Size = new Size(0, 0);
+            this.settingsBackgroundColorChanger.Visible = false;
+            this.settingsBackgroundColorChanger.Text = "Enter hex color";
+            //
+            //settingsBackgroundColorChangerButton
+            //
+            this.settingsBackgroundColorChangerButton.Name = "settingsBackgroundColorChangerButton";
+            this.settingsBackgroundColorChangerButton.Location = new Point(0, 0);
+            this.settingsBackgroundColorChangerButton.Size = new Size(0, 0);
+            this.settingsBackgroundColorChangerButton.Visible = false;
+            this.settingsBackgroundColorChangerButton.UseVisualStyleBackColor= true;
+            this.settingsBackgroundColorChangerButton.Text = "Submit";
+            //
+            //settingsBackgroundColorChanger
+            //
+            this.Controls.Add(settingsBackgroundColorChanger);
+            this.settingsBackgroundColorChanger.Name = "settingsBackgroundColorChanger";
+            this.settingsBackgroundColorChanger.Location = new Point(0, 0);
+            this.settingsBackgroundColorChanger.Size = new Size(0, 0);
+            this.settingsBackgroundColorChanger.Visible = false;
+            this.settingsBackgroundColorChanger.Text = "#hex color";
+            this.settingsBackgroundColorChanger.TextChanged += new EventHandler(this.BackgroundColorChanger_Text_Changed);
+
+            settingsBackgroundColorChangerRed.Location = new Point(20, 20);
+            settingsBackgroundColorChangerRed.Size = new Size(100, 20);
+            settingsBackgroundColorChangerRed.Visible = true;
+
+            settingsBackgroundColorChangerRed.Location = new Point(0, 0);
+            settingsBackgroundColorChangerRed.Size = new Size(0, 0);
+            settingsBackgroundColorChangerRed.Visible = false;			
