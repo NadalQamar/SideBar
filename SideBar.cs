@@ -24,15 +24,41 @@ namespace SideBar
 
         }
 
+        //Methods
+        private void SettingOptionsOpen (object sender, EventArgs e)//When setting options open
+        {
+            settingsBackgroundColorChanger.Location = new Point(20, 20);
+            settingsBackgroundColorChanger.Size = new Size(100, 20);
+            settingsBackgroundColorChanger.Visible = true;
+
+            settingsBackgroundColorChangerButton.Location = new Point(120, 20);
+            settingsBackgroundColorChangerButton.Size = new Size(50, 20);
+            settingsBackgroundColorChangerButton.Visible = true;
+        }
+        private void SettingOptionsClose(object sender, EventArgs e)//When Setting options close
+        {
+            
+            settingsBackgroundColorChanger.Location = new Point(0, 0);
+            settingsBackgroundColorChanger.Size = new Size(0, 0);
+            settingsBackgroundColorChanger.Visible = false;
+
+           
+            settingsBackgroundColorChangerButton.Location = new Point(0, 0);
+            settingsBackgroundColorChangerButton.Size = new Size(0, 0);
+            settingsBackgroundColorChangerButton.Visible = false;
+        }
+
         private void Mouse_Enter(object sender, EventArgs e)
-        {// Hide and Unhide
+        {// Hide and Unhide the SideBar
             if(accessFlag == true && settingFlag == true)
             {
                 Location = new Point(Screen.PrimaryScreen.Bounds.Width - 1, 0);
                 ClientSize = new Size(40, Screen.PrimaryScreen.Bounds.Height);
-                SideBarPrimaryButtonPanel.Location = new System.Drawing.Point(0, Screen.PrimaryScreen.Bounds.Height - 110);
+                SideBarPrimaryButtonPanel.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - 110);
                 accessFlag = false;
                 settingFlag = false;
+
+                SettingOptionsClose(sender, e);
             }
             else if(accessFlag == false)
             {
@@ -45,25 +71,33 @@ namespace SideBar
                 accessFlag = false;
             }
         }
-        private void settingsButton_Click(object sender, EventArgs e)
-        {
+        private void SettingButton_Cllick(object sender, EventArgs e)
+        {//Opens up the Settings Panel
             if (settingFlag == false)
             {
                 Location = new Point(Screen.PrimaryScreen.Bounds.Width - 550, 0);
                 ClientSize = new Size(550, Screen.PrimaryScreen.Bounds.Height);
-                SideBarPrimaryButtonPanel.Location = new System.Drawing.Point(ClientSize.Width - 40, Screen.PrimaryScreen.Bounds.Height - 110);
+                SideBarPrimaryButtonPanel.Location = new Point(ClientSize.Width - 40, Screen.PrimaryScreen.Bounds.Height - 110);
                 settingFlag = true;
+
+                SettingOptionsOpen(sender, e);
             }
             else
             {
                 Location = new Point(Screen.PrimaryScreen.Bounds.Width - 40, 0);
                 ClientSize = new Size(40, Screen.PrimaryScreen.Bounds.Height);
-                SideBarPrimaryButtonPanel.Location = new System.Drawing.Point(0, Screen.PrimaryScreen.Bounds.Height - 110);
+                SideBarPrimaryButtonPanel.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - 110);
                 settingFlag = false;
+
+                SettingOptionsClose(sender, e);
             }
         }
-        private void visiblityButton_Click(object sender, EventArgs e)
+        private void BackgroundColorChanger_Text_Changed(object sender, EventArgs e)
         {
+
+        }
+        private void VisiblityButton_Cllick(object sender, EventArgs e)
+        {//Prevents or allows default behaviour(hide or unhide)
             if(accessFlag == true && settingFlag == true && ControlBox.Enabled == true)
             {
                 ControlBox.Enabled = false;
@@ -83,8 +117,8 @@ namespace SideBar
             }
 
         }
-        private void closeButton_Click(object sender, EventArgs e)
-        {
+        private void CloseButton_Cllick(object sender, EventArgs e)
+        {//Closes the SideBar
             this.Dispose();
             this.Close();
         }

@@ -1,0 +1,5 @@
+SideBar
+            this.Location = Location = new System.Drawing.Point(Screen.PrimaryScreen.Bounds.Width - 1, 0);
+SideBarPrimaryButtonPanel
+            this.SideBarPrimaryButtonPanel.Location = new System.Drawing.Point(0, Screen.PrimaryScreen.Bounds.Height-110);
+			
