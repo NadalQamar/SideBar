@@ -1,6 +1,6 @@
 # SideBar
 
-Version: 0.11
+Version: 0.12
 
 WIP, Works in a simliar fashion to the Edge Bar.
 
@@ -16,4 +16,7 @@ Version: 0.10<br />
 
 Version: 0.11<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added three buttons to SideBar.
+
+Version: 0.12<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added Background Color Changer to SideBar.
 
