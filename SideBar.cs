@@ -162,7 +162,7 @@ namespace SideBar
             }
             else
             {
-                Console.WriteLine("Only Numbers"2);
+                Console.WriteLine("Only Numbers2");
             }
         }
         private void BackgroundColorChangerBlue_Text_Changed(object sender, EventArgs e)//blue
