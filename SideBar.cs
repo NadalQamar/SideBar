@@ -14,6 +14,10 @@ namespace SideBar
     {
         bool accessFlag = false;
         bool settingFlag = false;
+        int formColorR;
+        int formColorG;
+        int formColorB;
+        int formColorA;
 
         public SideBar()
         {
@@ -21,31 +25,78 @@ namespace SideBar
         }
         private void SideBar_Load(object sender, EventArgs e)
         {
+            formColorA = BackColor.A;
+            formColorR = BackColor.R;
+            formColorG = BackColor.G;
+            formColorB = BackColor.B;
 
         }
 
         //Methods
         private void SettingOptionsOpen (object sender, EventArgs e)//When setting options open
         {
-            settingsBackgroundColorChanger.Location = new Point(20, 20);
-            settingsBackgroundColorChanger.Size = new Size(100, 20);
-            settingsBackgroundColorChanger.Visible = true;
-
-            settingsBackgroundColorChangerButton.Location = new Point(120, 20);
-            settingsBackgroundColorChangerButton.Size = new Size(50, 20);
-            settingsBackgroundColorChangerButton.Visible = true;
+            //size of the controls
+            int sizeWidthBox = 30;
+            int sizeHeightBox = 20;
+            int sizeWidthLabel = 50;
+            int sizeHeightLabel = 20;
+            //red
+            settingsBackgroundColorChangerRed.Location = new Point(20, 20);
+            settingsBackgroundColorChangerRed.Size = new Size(sizeWidthBox, sizeHeightBox);
+            settingsBackgroundColorChangerRed.Visible = true;
+            settingsBackgroundColorChangerRed.Text = formColorR.ToString();
+            //redLabel
+            settingsBackgroundColorChangerRedLabel.Location = new Point(50, 20);
+            settingsBackgroundColorChangerRedLabel.Size = new Size(sizeWidthLabel, sizeHeightLabel);
+            settingsBackgroundColorChangerRedLabel.Visible = true;
+            settingsBackgroundColorChangerRedLabel.Text = "Red";
+            //green
+            settingsBackgroundColorChangerGreen.Location = new Point(20, 50);
+            settingsBackgroundColorChangerGreen.Size = new Size(sizeWidthBox, sizeHeightBox);
+            settingsBackgroundColorChangerGreen.Visible = true;
+            settingsBackgroundColorChangerGreen.Text = formColorG.ToString();
+            //greenLabel
+            settingsBackgroundColorChangerGreenLabel.Location = new Point(50, 50);
+            settingsBackgroundColorChangerGreenLabel.Size = new Size(sizeWidthLabel, sizeHeightLabel);
+            settingsBackgroundColorChangerGreenLabel.Visible = true;
+            settingsBackgroundColorChangerGreenLabel.Text = "Green";
+            //blue
+            settingsBackgroundColorChangerBlue.Location = new Point(20, 80);
+            settingsBackgroundColorChangerBlue.Size = new Size(sizeWidthBox, sizeHeightBox);
+            settingsBackgroundColorChangerBlue.Visible = true;
+            settingsBackgroundColorChangerBlue.Text = formColorB.ToString();
+            //blueLabel
+            settingsBackgroundColorChangerBlueLabel.Location = new Point(50, 80);
+            settingsBackgroundColorChangerBlueLabel.Size = new Size(sizeWidthLabel, sizeHeightLabel);
+            settingsBackgroundColorChangerBlueLabel.Visible = true;
+            settingsBackgroundColorChangerBlueLabel.Text = "Blue";
         }
         private void SettingOptionsClose(object sender, EventArgs e)//When Setting options close
         {
-            
-            settingsBackgroundColorChanger.Location = new Point(0, 0);
-            settingsBackgroundColorChanger.Size = new Size(0, 0);
-            settingsBackgroundColorChanger.Visible = false;
-
-           
-            settingsBackgroundColorChangerButton.Location = new Point(0, 0);
-            settingsBackgroundColorChangerButton.Size = new Size(0, 0);
-            settingsBackgroundColorChangerButton.Visible = false;
+            //red
+            settingsBackgroundColorChangerRed.Location = new Point(0, 0);
+            settingsBackgroundColorChangerRed.Size = new Size(0, 0);
+            settingsBackgroundColorChangerRed.Visible = false;
+            //redLabel
+            settingsBackgroundColorChangerRedLabel.Location = new Point(0, 0);
+            settingsBackgroundColorChangerRedLabel.Size = new Size(0, 0);
+            settingsBackgroundColorChangerRedLabel.Visible = false;
+            //green
+            settingsBackgroundColorChangerGreen.Location = new Point(0, 0);
+            settingsBackgroundColorChangerGreen.Size = new Size(0, 0);
+            settingsBackgroundColorChangerGreen.Visible = false;
+            //greenLabel
+            settingsBackgroundColorChangerGreenLabel.Location = new Point(0, 0);
+            settingsBackgroundColorChangerGreenLabel.Size = new Size(0, 0);
+            settingsBackgroundColorChangerGreenLabel.Visible = false;
+            //blue
+            settingsBackgroundColorChangerBlue.Location = new Point(0, 0);
+            settingsBackgroundColorChangerBlue.Size = new Size(0, 0);
+            settingsBackgroundColorChangerBlue.Visible = false;
+            //blueLabel
+            settingsBackgroundColorChangerBlueLabel.Location = new Point(0, 0);
+            settingsBackgroundColorChangerBlueLabel.Size = new Size(0, 0);
+            settingsBackgroundColorChangerBlueLabel.Visible = false;
         }
 
         private void Mouse_Enter(object sender, EventArgs e)
@@ -92,9 +143,38 @@ namespace SideBar
                 SettingOptionsClose(sender, e);
             }
         }
-        private void BackgroundColorChanger_Text_Changed(object sender, EventArgs e)
+        private void BackgroundColorChangerRed_Text_Changed(object sender, EventArgs e)//red
         {
-
+            if(Int32.TryParse(settingsBackgroundColorChangerRed.Text, out formColorR) == true)
+            {
+                BackColor = Color.FromArgb(formColorA, formColorR, formColorG, formColorB);
+            }
+            else
+            {
+                Console.WriteLine("Only Numbers1");
+            }
+        }
+        private void BackgroundColorChangerGreen_Text_Changed(object sender, EventArgs e)//green
+        {
+            if (Int32.TryParse(settingsBackgroundColorChangerGreen.Text, out formColorG) == true)
+            {
+                BackColor = Color.FromArgb(formColorA, formColorR, formColorG, formColorB);
+            }
+            else
+            {
+                Console.WriteLine("Only Numbers"2);
+            }
+        }
+        private void BackgroundColorChangerBlue_Text_Changed(object sender, EventArgs e)//blue
+        {
+            if (Int32.TryParse(settingsBackgroundColorChangerBlue.Text, out formColorB) == true)
+            {
+                BackColor = Color.FromArgb(formColorA, formColorR, formColorG, formColorB);
+            }
+            else
+            {
+                Console.WriteLine("Only Numbers3");
+            }
         }
         private void VisiblityButton_Cllick(object sender, EventArgs e)
         {//Prevents or allows default behaviour(hide or unhide)

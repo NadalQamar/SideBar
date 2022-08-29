@@ -36,8 +36,12 @@ namespace SideBar
             this.components = new Container();
             this.ControlBox = new Label();
             this.settingsButton = new Button();
-            this.settingsBackgroundColorChanger = new TextBox();
-            this.settingsBackgroundColorChangerButton = new Button();
+            this.settingsBackgroundColorChangerRed = new TextBox();
+            this.settingsBackgroundColorChangerRedLabel = new Label();
+            this.settingsBackgroundColorChangerGreen = new TextBox();
+            this.settingsBackgroundColorChangerGreenLabel = new Label();
+            this.settingsBackgroundColorChangerBlue = new TextBox();
+            this.settingsBackgroundColorChangerBlueLabel = new Label();
             this.visiblityButton = new Button();
             this.closeButton = new Button();
             this.settingsButtonInfo = new ToolTip(this.components);
@@ -67,25 +71,59 @@ namespace SideBar
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new EventHandler(this.SettingButton_Cllick);
             //
-            //settingsBackgroundColorChanger
+            //settingsBackgroundColorChangerRed
             //
-            this.Controls.Add(settingsBackgroundColorChanger);
-            this.settingsBackgroundColorChanger.Name = "settingsBackgroundColorChanger";
-            this.settingsBackgroundColorChanger.Location = new Point(0, 0);
-            this.settingsBackgroundColorChanger.Size = new Size(0, 0);
-            this.settingsBackgroundColorChanger.Visible = false;
-            this.settingsBackgroundColorChanger.Text = "#hex color";
-            this.settingsBackgroundColorChanger.TextChanged += new EventHandler(this.BackgroundColorChanger_Text_Changed);
+            this.Controls.Add(settingsBackgroundColorChangerRed);
+            this.settingsBackgroundColorChangerRed.Name = "settingsBackgroundColorChangerRed";
+            this.settingsBackgroundColorChangerRed.Location = new Point(0, 0);
+            this.settingsBackgroundColorChangerRed.Size = new Size(0, 0);
+            this.settingsBackgroundColorChangerRed.Visible = false;
+            this.settingsBackgroundColorChangerRed.TextChanged += new EventHandler(this.BackgroundColorChangerRed_Text_Changed);
+            this.settingsBackgroundColorChangerRed.MaxLength = 3;
             //
-            //settingsBackgroundColorChangerButton
+            //settingsBackgroundColorChangerRedLabel
             //
-            this.Controls.Add(settingsBackgroundColorChangerButton);
-            this.settingsBackgroundColorChangerButton.Name = "settingsBackgroundColorChangerButton";
-            this.settingsBackgroundColorChangerButton.Location = new Point(0, 0);
-            this.settingsBackgroundColorChangerButton.Size = new Size(0, 0);
-            this.settingsBackgroundColorChangerButton.Visible = false;
-            this.settingsBackgroundColorChangerButton.UseVisualStyleBackColor= true;
-            this.settingsBackgroundColorChangerButton.Text = "Submit";
+            this.Controls.Add(settingsBackgroundColorChangerRedLabel);
+            this.settingsBackgroundColorChangerRedLabel.Name = "settingsBackgroundColorChangerRedLabel";
+            this.settingsBackgroundColorChangerRedLabel.Location = new Point(0, 0);
+            this.settingsBackgroundColorChangerRedLabel.Size = new Size(0, 0);
+            this.settingsBackgroundColorChangerRedLabel.Visible = false;
+            //
+            //settingsBackgroundColorChangerGreen
+            //
+            this.Controls.Add(settingsBackgroundColorChangerGreen);
+            this.settingsBackgroundColorChangerGreen.Name = "settingsBackgroundColorChangerGreen";
+            this.settingsBackgroundColorChangerGreen.Location = new Point(0, 0);
+            this.settingsBackgroundColorChangerGreen.Size = new Size(0, 0);
+            this.settingsBackgroundColorChangerGreen.Visible = false;
+            this.settingsBackgroundColorChangerGreen.TextChanged += new EventHandler(this.BackgroundColorChangerGreen_Text_Changed);
+            this.settingsBackgroundColorChangerGreen.MaxLength = 3;
+            //
+            //settingsBackgroundColorChangerGreenLabel
+            //
+            this.Controls.Add(settingsBackgroundColorChangerGreenLabel);
+            this.settingsBackgroundColorChangerGreenLabel.Name = "settingsBackgroundColorChangerGreenLabel";
+            this.settingsBackgroundColorChangerGreenLabel.Location = new Point(0, 0);
+            this.settingsBackgroundColorChangerGreenLabel.Size = new Size(0, 0);
+            this.settingsBackgroundColorChangerGreenLabel.Visible = false;
+            //
+            //settingsBackgroundColorChangerBlue
+            //
+            this.Controls.Add(settingsBackgroundColorChangerBlue);
+            this.settingsBackgroundColorChangerBlue.Name = "settingsBackgroundColorChangerBlue";
+            this.settingsBackgroundColorChangerBlue.Location = new Point(0, 0);
+            this.settingsBackgroundColorChangerBlue.Size = new Size(0, 0);
+            this.settingsBackgroundColorChangerBlue.Visible = false;
+            this.settingsBackgroundColorChangerBlue.TextChanged += new EventHandler(this.BackgroundColorChangerBlue_Text_Changed);
+            this.settingsBackgroundColorChangerBlue.MaxLength = 3;
+            //
+            //settingsBackgroundColorChangerBlueLabel
+            //
+            this.Controls.Add(settingsBackgroundColorChangerBlueLabel);
+            this.settingsBackgroundColorChangerBlueLabel.Name = "settingsBackgroundColorChangerBlueLabel";
+            this.settingsBackgroundColorChangerBlueLabel.Location = new Point(0, 0);
+            this.settingsBackgroundColorChangerBlueLabel.Size = new Size(0, 0);
+            this.settingsBackgroundColorChangerBlueLabel.Visible = false;
             // 
             // visiblityButton
             // 
@@ -143,8 +181,12 @@ namespace SideBar
 
         private new Label ControlBox;
         private Button settingsButton;
-        private TextBox settingsBackgroundColorChanger;
-        private Button settingsBackgroundColorChangerButton;
+        private TextBox settingsBackgroundColorChangerRed;
+        private Label settingsBackgroundColorChangerRedLabel;
+        private TextBox settingsBackgroundColorChangerGreen;
+        private Label settingsBackgroundColorChangerGreenLabel;
+        private TextBox settingsBackgroundColorChangerBlue;
+        private Label settingsBackgroundColorChangerBlueLabel;
         private Button visiblityButton;
         private Button closeButton;
         private ToolTip closeButtonInfo;
