@@ -1,4 +1,4 @@
-# SideBar...Depreciated
+# SideBar...Depreciated...might return to this in the future
 
 Version: 0.12
 
