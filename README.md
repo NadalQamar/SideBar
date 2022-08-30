@@ -1,4 +1,4 @@
-# SideBar
+# SideBar...Depreciated
 
 Version: 0.12
 
