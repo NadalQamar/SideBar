@@ -36,6 +36,8 @@ namespace SideBar
             this.components = new Container();
             this.ControlBox = new Label();
             this.settingsButton = new Button();
+            this.settingsBackgroundColorChangerAlpha = new TextBox();
+            this.settingsBackgroundColorChangerAlphaLabel = new Label();
             this.settingsBackgroundColorChangerRed = new TextBox();
             this.settingsBackgroundColorChangerRedLabel = new Label();
             this.settingsBackgroundColorChangerGreen = new TextBox();
@@ -70,6 +72,24 @@ namespace SideBar
             this.settingsButtonInfo.SetToolTip(this.settingsButton, "Settings");
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new EventHandler(this.SettingButton_Cllick);
+            //
+            //settingsBackgroundColorChangerAlpha
+            //
+            this.Controls.Add(settingsBackgroundColorChangerAlpha);
+            this.settingsBackgroundColorChangerAlpha.Name = "settingsBackgroundColorChangerAlpha";
+            this.settingsBackgroundColorChangerAlpha.Location = new Point(0, 0);
+            this.settingsBackgroundColorChangerAlpha.Size = new Size(0, 0);
+            this.settingsBackgroundColorChangerAlpha.Visible = false;
+            //this.settingsBackgroundColorChangerAlpha.TextChanged += new EventHandler(this.BackgroundColorChangerAlpha_Text_Changed);
+            this.settingsBackgroundColorChangerAlpha.MaxLength = 3;
+            //
+            //settingsBackgroundColorChangerAlphaLabel
+            //
+            this.Controls.Add(settingsBackgroundColorChangerAlphaLabel);
+            this.settingsBackgroundColorChangerAlphaLabel.Name = "settingsBackgroundColorChangerAlphaLabel";
+            this.settingsBackgroundColorChangerAlphaLabel.Location = new Point(0, 0);
+            this.settingsBackgroundColorChangerAlphaLabel.Size = new Size(0, 0);
+            this.settingsBackgroundColorChangerAlphaLabel.Visible = false;
             //
             //settingsBackgroundColorChangerRed
             //
@@ -172,6 +192,7 @@ namespace SideBar
             this.Text = "SideBar";
             this.TopMost = true;
             this.Load += new EventHandler(this.SideBar_Load);
+            //this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SideBarPrimaryButtonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -181,6 +202,8 @@ namespace SideBar
 
         private new Label ControlBox;
         private Button settingsButton;
+        private TextBox settingsBackgroundColorChangerAlpha;
+        private Label settingsBackgroundColorChangerAlphaLabel;
         private TextBox settingsBackgroundColorChangerRed;
         private Label settingsBackgroundColorChangerRedLabel;
         private TextBox settingsBackgroundColorChangerGreen;
